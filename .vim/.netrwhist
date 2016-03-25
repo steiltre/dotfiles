@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/HGST4TB/Dropbox/School/Math/Grad/PDE/8584hw/hw1'
+let g:netrw_dirhist_2='/home/HGST4TB/Dropbox/Programming/fortran/book1_exer/ch1/1-8-2'
