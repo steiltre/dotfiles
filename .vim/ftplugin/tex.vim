@@ -3,8 +3,8 @@
 set sw=2
 
 " add text wrapping
-" set tw=150 " For hard wrapping, newline characters are entered
-set wrap linebreak nolist " For soft wrapping, text is not reformatted
+set tw=150 " For hard wrapping, newline characters are entered
+" set wrap linebreak nolist " For soft wrapping, text is not reformatted
 "
 " TIP: if you write your \label's as \label{fig:something}, then if you
 " type in \ref{fig: and press <C-n> you will automatically cycle through
@@ -14,3 +14,7 @@ set iskeyword+=:
 " set to compile to pdf by default
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf, aux'
+
+" ONLY WORKS IN GVIM
+" Set environments used by <Shift - F1> through <Shift - F4>
+let g:Tex_HotKeyMappings = 'claim, problem, solution, bmatrix'
