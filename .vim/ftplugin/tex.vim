@@ -3,8 +3,8 @@
 set sw=2
 
 " add text wrapping
-" set tw=150 " For hard wrapping, newline characters are entered
-set wrap linebreak nolist " For soft wrapping, text is not reformatted
+set tw=150 " For hard wrapping, newline characters are entered
+" set wrap linebreak nolist " For soft wrapping, text is not reformatted
 "
 " TIP: if you write your \label's as \label{fig:something}, then if you
 " type in \ref{fig: and press <C-n> you will automatically cycle through
