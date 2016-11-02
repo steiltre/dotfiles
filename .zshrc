@@ -1,8 +1,8 @@
 # Exports {{{
 export GITHUB_USER="your-username"
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin # Reorder PATH so local bin is first
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
+#export GREP_OPTIONS='--color=auto'
+export GREP_COLORS='1;32'
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
 export EDITOR="vim"
 export TERM="screen-256color"
