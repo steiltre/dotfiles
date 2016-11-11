@@ -255,7 +255,7 @@ function parse_git_state() {
 # If inside a Git repository, print its branch and state
 function git_prompt_string() {
   local git_where="$(parse_git_branch)"
-  [ -n "$git_where" ] && echo "on %{$fg[magenta]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)$reset_colors"
+  [ -n "$git_where" ] && echo "on %{$fg[magenta]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)"
 }
 
 function current_pwd {
@@ -272,12 +272,12 @@ function current_pwd {
 #$(prompt_char) '
 
  PROMPT='
-${PR_BOLD_BLUE}%n@%m%{$reset_color%} ${PR_BLUE}%~%{$reset_color%} $(git_prompt_string)
+${PR_BOLD_BLUE}%n@%m%{$reset_color%} ${PR_BLUE}%~%{$reset_color%} $(git_prompt_string)%{$reset_color%}
 $(prompt_char) '
 
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
-RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}$(get_ruby_version)%{$reset_color%}'
+RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}%N%{$reset_color%}'
 # }}}
 
 # History {{{
