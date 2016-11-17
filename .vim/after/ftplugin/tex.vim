@@ -1,2 +1,3 @@
-"Ignore ETE macro to allow typing DELETE
+"Ignore certain macros to allow upper-case typing
 call IMAP('ETE','ETE','tex')
+call IMAP('EAR','EAR','tex')
