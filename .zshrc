@@ -310,5 +310,10 @@ function postexec {
 # }}}
 
 # Keychain {{{
-eval 'keychain --eval /home/trevor/.ssh/key'
+<<<<<<< HEAD
+eval 'keychain --eval ~/.ssh/key'
 #}}}
+=======
+eval 'keychain --eval ~/.ssh/key'
+# }}}
+>>>>>>> origin/master
