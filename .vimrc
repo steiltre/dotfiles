@@ -24,6 +24,9 @@ set number
 " fixes 'CSApprox skipped; terminal only has 8 colors, not 88/256
 set t_Co=256
 
+" compile .bib file with biber using \lb
+map <Leader>lb :<C-U>exec '!biber '.Tex_GetMainFileName(':p:t:r')<CR>
+
 " Settings {{{
 " Switch syntax highlighting on, when the terminal has colors
 syntax on
