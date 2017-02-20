@@ -1,6 +1,6 @@
 # Exports {{{
 export GITHUB_USER="your-username"
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin # Reorder PATH so local bin is first
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin # Reorder PATH so local bin is first
 #export GREP_OPTIONS='--color=auto'
 export GREP_COLORS='1;32'
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
@@ -9,6 +9,7 @@ export TERM="screen-256color"
 export CLICOLOR=1
 #export LSCOLORS=Gxfxcxdxbxegedabagacad
 #export LS_COLORS=Gxfxcxdxbxegedabagacad
+export PERL5LIB=~/localperl/lib:~/biblatex-biber-2.7/lib
 # }}}
 
 # Ruby {{{
@@ -310,10 +311,5 @@ function postexec {
 # }}}
 
 # Keychain {{{
-<<<<<<< HEAD
 eval 'keychain --eval ~/.ssh/key'
 #}}}
-=======
-eval 'keychain --eval ~/.ssh/key'
-# }}}
->>>>>>> origin/master
