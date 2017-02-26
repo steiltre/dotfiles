@@ -9,7 +9,8 @@ export TERM="screen-256color"
 export CLICOLOR=1
 #export LSCOLORS=Gxfxcxdxbxegedabagacad
 #export LS_COLORS=Gxfxcxdxbxegedabagacad
-export PERL5LIB=~/localperl/lib:~/biblatex-biber-2.7/lib
+#export PERL5LIB=~/localperl/lib:~/biblatex-biber-2.7/lib
+export PERL5LIB=~/perl5/lib:~/localperl/lib:~/biblatex-biber-2.7/lib
 # }}}
 
 # Ruby {{{
@@ -313,3 +314,10 @@ function postexec {
 # Keychain {{{
 eval 'keychain --eval ~/.ssh/key'
 #}}}
+eval `perl -I ~/perl5/lib/perl5 -Mlocal::lib`
+export MANPATH=$HOME/perl5/man:$MANPATH
+
+if [ -d "/opt/intel" ]; then
+  source /opt/intel/bin/compilervars.sh intel64
+  source /opt/intel/vtune_amplifier_xe/amplxe-vars.sh
+fi
