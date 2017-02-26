@@ -1,8 +1,8 @@
 # Exports {{{
 export GITHUB_USER="your-username"
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin # Reorder PATH so local bin is first
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin # Reorder PATH so local bin is first
+#export GREP_OPTIONS='--color=auto'
+export GREP_COLORS='1;32'
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
 export EDITOR="vim"
 export TERM="screen-256color"
@@ -255,7 +255,7 @@ function parse_git_state() {
 # If inside a Git repository, print its branch and state
 function git_prompt_string() {
   local git_where="$(parse_git_branch)"
-  [ -n "$git_where" ] && echo "on %{$fg[blue]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)"
+  [ -n "$git_where" ] && echo "on %{$fg[magenta]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)"
 }
 
 function current_pwd {
@@ -267,13 +267,17 @@ function current_pwd {
 # ${PR_GREEN}%n%{$reset_color%} %{$FG[239]%}at%{$reset_color%} ${PR_BOLD_BLUE}$(box_name)%{$reset_color%} %{$FG[239]%}in%{$reset_color%} ${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)
 # $(prompt_char) '
 
-PROMPT='
-${PR_GREEN}T.%{$reset_color%} ${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)
+#PROMPT='
+#${PR_GREEN}T.%{$reset_color%} ${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)
+#$(prompt_char) '
+
+ PROMPT='
+${PR_BOLD_BLUE}%n@%m%{$reset_color%} ${PR_BLUE}%~%{$reset_color%} $(git_prompt_string)%{$reset_color%}
 $(prompt_char) '
 
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
-RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}$(get_ruby_version)%{$reset_color%}'
+RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}%N%{$reset_color%}'
 # }}}
 
 # History {{{
@@ -304,3 +308,7 @@ function postexec {
   set_running_app
 }
 # }}}
+
+# Keychain {{{
+eval 'keychain --eval ~/.ssh/key'
+#}}}
