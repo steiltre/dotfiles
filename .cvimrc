@@ -1,0 +1,10 @@
+let configpath = '/home/trevor/.cvimrc'
+set local config
+
+set noautofocus
+
+unmap H, J, K, L
+map H previousTab
+map J goBack
+map K goForward
+map L nextTab
