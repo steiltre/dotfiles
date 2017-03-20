@@ -1,6 +1,6 @@
 # Exports {{{
 export GITHUB_USER="your-username"
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin # Reorder PATH so local bin is first
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin # Reorder PATH so local bin is first
 #export GREP_OPTIONS='--color=auto'
 export GREP_COLORS='1;32'
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
@@ -312,3 +312,8 @@ function postexec {
 # Keychain {{{
 eval 'keychain --eval ~/.ssh/key'
 #}}}
+
+#if [ -d "/opt/intel" ]; then
+#  source /opt/intel/bin/compilervars.sh intel64
+#  source /opt/intel/vtune_amplifier_xe/amplxe-vars.sh
+#fi
