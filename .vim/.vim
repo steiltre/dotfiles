@@ -1,1 +1,0 @@
-/home/steil016/Documents/git/dotfiles/.vim

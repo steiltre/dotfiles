@@ -1,6 +1,3 @@
-let configpath = '/home/trevor/.cvimrc'
-set local config
-
 set noautofocus
 
 unmap H, J, K, L

@@ -19,7 +19,7 @@ filetype indent on
 let g:tex_flavor='latex'
 
 " show line numbers
-set number
+set relativenumber
 
 " fixes 'CSApprox skipped; terminal only has 8 colors, not 88/256
 set t_Co=256
