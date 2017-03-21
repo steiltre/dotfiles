@@ -14,7 +14,3 @@ set iskeyword+=:
 " set to compile to pdf by default
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf, aux'
-
-" ONLY WORKS IN GVIM
-" Set environments used by <Shift - F1> through <Shift - F4>
-let g:Tex_HotKeyMappings = 'claim, problem, solution, bmatrix'
