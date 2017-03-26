@@ -18,9 +18,6 @@ filetype indent on
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-" show line numbers
-set relativenumber
-
 " fixes 'CSApprox skipped; terminal only has 8 colors, not 88/256
 set t_Co=256
 
@@ -85,7 +82,7 @@ set tabstop=4
 set shiftwidth=4
 
 " Turn on line numbers
-set number
+set relativenumber
 
 " Highlight tailing whitespace
 set list listchars=tab:\ \ ,trail:·
@@ -135,13 +132,16 @@ set lazyredraw
 " highlight a matching [{()}] when cursor is placed on start/end character
 set showmatch
 
+" Search filesystem recursively
+set path+=**
+
 " Set built-in file system explorer to use layout similar to the NERDTree plugin
 let g:netrw_liststyle=3
 
 " Always highlight column 80 so it's easier to see where
 " cutoff appears on longer screens
-autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
-set colorcolumn=80
+"autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
+"set colorcolumn=80
 " }}}
 
 " Plugins {{{
@@ -285,6 +285,10 @@ map <Leader>ws :ChooseWin<cr>
 " }}}
 
 " Commands {{{
+
+" Create tags file
+command! MakeTags !ctags -R .
+
 " jump to last cursor
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
