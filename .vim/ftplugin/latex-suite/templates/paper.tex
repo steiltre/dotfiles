@@ -4,7 +4,7 @@
 % Last Change: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
 %
 
-\documentclass[11pt]{article}
+\documentclass[a4paper]{article}
 
 \title{ <++>}
 \date{<++>}
@@ -13,6 +13,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage[backend=biber]{biblatex}
 \usepackage{esint}
 \usepackage{enumitem}
 \usepackage{algorithm}
@@ -44,12 +45,10 @@
 \renewcommand{\vec}[1]{\mathbf{#1}}
 \renewcommand{\div}{\mathrm{div}}
 
-\newenvironment{problem}{\textbf{Problem.}}
-
-\newenvironment{solution}[1][]{\emph{Solution #1}}
-
 \algnewcommand{\Or}{\textbf{ or }}
 \algnewcommand{\And}{\textbf{ or }}
+
+\addbibresource{project.bib}
 
 \begin{document}
 \maketitle
