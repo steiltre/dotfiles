@@ -13,6 +13,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage[margin=1.0in]{geometry}
 \usepackage{esint}
 \usepackage{enumitem}
 \usepackage{algorithm}
@@ -50,6 +51,12 @@
 
 \algnewcommand{\Or}{\textbf{ or }}
 \algnewcommand{\And}{\textbf{ or }}
+
+% Indent paragraphs and remove spacing between paragraphs in itemize and enumerate environments
+\setlist{
+  listparindent=\parindent,
+  parsep=0pt,
+}
 
 \begin{document}
 \maketitle
