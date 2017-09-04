@@ -82,7 +82,7 @@ set tabstop=4
 set shiftwidth=4
 
 " Turn on line numbers
-set relativenumber
+" set relativenumber
 set number
 
 " Highlight tailing whitespace
