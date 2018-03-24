@@ -1,0 +1,64 @@
+snippet hw
+%        File: `!p snip.rv = snip.fn`
+%     Created: `date +%x`
+%
+
+\\documentclass[11pt]{article}
+
+\\title{$1}
+\\date{\\today}
+\\author{$2}
+
+\\usepackage{amsmath}
+\\usepackage{amsthm}
+\\usepackage{amssymb}
+\\usepackage[margin=1.0in]{geometry}
+\\usepackage{esint}
+\\usepackage{enumitem}
+\\usepackage{algorithm}
+\\usepackage{algorithmicx}
+\\usepackage{algpseudocode}
+\\usepackage{bbm}
+\\usepackage{xcolor}
+
+\\newtheorem{theorem}{Theorem}[section]
+\\newtheorem{corollary}{Corollary}[section]
+\\newtheorem{proposition}{Proposition}[section]
+\\newtheorem{lemma}{Lemma}[section]
+\\newtheorem*{claim}{Claim}
+%\\newtheorem*{problem}{Problem}
+%\\newtheorem*{lemma}{Lemma}
+\\newtheorem{definition}{Definition}[section]
+
+\\newcommand{\\R}{\\mathbb{R}}
+\\newcommand{\\N}{\\mathbb{N}}
+\\newcommand{\\C}{\\mathbb{C}}
+\\newcommand{\\Z}{\\mathbb{Z}}
+\\newcommand{\\Q}{\\mathbb{Q}}
+\\newcommand{\\E}{\\mathbb{E}}
+\\newcommand{\\supp}[1]{\\mathop{\\mathrm{supp}}\\left(#1\\right)}
+\\newcommand{\\lip}[1]{\\mathop{\\mathrm{Lip}}\\left(#1\\right)}
+\\newcommand{\\curl}{\\mathrm{curl}}
+\\newcommand{\\la}{\\left \\langle}
+\\newcommand{\\ra}{\\right \\rangle}
+\\renewcommand{\\vec}[1]{\\mathbf{#1}}
+\\renewcommand{\\div}{\\mathrm{div}}
+
+\\newenvironment{problem}{\\textbf{Problem.}}
+
+\\newenvironment{solution}[1][]{\\emph{Solution #1}}
+
+\\algnewcommand{\\Or}{\\textbf{ or }}
+\\algnewcommand{\\And}{\\textbf{ or }}
+
+% Indent paragraphs and remove spacing between paragraphs in itemize and enumerate environments
+\\setlist{ listparindent=\\parindent, parsep=0pt,}
+
+
+\\begin{document}
+\\maketitle
+
+$0
+
+\\end{document}
+endsnippet
