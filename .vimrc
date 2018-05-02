@@ -7,13 +7,13 @@ set number
 set nowrap
 
 " Set width for hard-wrapping
-set textwidth=80
+set textwidth=120
 
 " Allow backspaces and deletes to remove \n
 set backspace=indent,eol,start
 
 " Turn tabs into spaces
-"set expandtab
+set expandtab
 
 " Set size of tab for manual indenting
 set tabstop=4
@@ -85,20 +85,8 @@ set hidden
 " Correctly identify .tex documents
 let g:tex_flavor = 'latex'
 
-" Plugin manager
-call plug#begin('~/.vim/plugged')
-
-" LaTeX compiler for Vim
-Plug 'lervag/vimtex'
-
-" Snippet engine
-Plug 'SirVer/ultisnips'
-
-call plug#end()
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
-
 " Add any changes that are only for this machine in .vimrc.local
-source $HOME/.vimrc.local
+if filereadable($HOME . "/.vimrc.local")
+	source $HOME/.vimrc.local
+endif
 

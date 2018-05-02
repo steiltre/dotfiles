@@ -38,17 +38,10 @@ setopt CORRECT
 # Make completions case-insensitive
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-# Set path
-PATH+=:~/bin
-
 # Use vim-like keybindings in terminal
 bindkey -v
 
-# Open vim with clientserver (for vimtex)
-alias vim='vim --servername VIM'
-
-# Fix ls colors for solarized dark
-eval `dircolors ~/.dircolors`
-
-# Set ls to automatically color output
-alias ls='ls --color -F'
+# Add in local zsh config
+if [[ -a ~/.zshrc.local ]]; then
+	source ~/.zshrc.local
+fi
