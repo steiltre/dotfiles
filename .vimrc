@@ -49,6 +49,10 @@ set cursorline
 " Highlight a matching [{()}] when cursor is placed on start/end character
 set showmatch
 
+" Remove timeout on mappings
+set notimeout
+set ttimeout
+
 set t_Co=256
 " Set solarized dark colors in Vim
 syntax enable

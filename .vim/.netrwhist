@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/trevor/.dropbox/machine_storage'
 let g:netrw_dirhist_2='/home/trevor/.dir_colors'
 let g:netrw_dirhist_3='/home/storage/Dropbox/vim'
+let g:netrw_dirhist_4='/home/trevor/Documents/git/dotfiles/.vim/plugged/vimtex/ftplugin'
+let g:netrw_dirhist_5='/home/trevor/Documents/git/dotfiles/.vim/plugged/vimtex/autoload/vimtex'
