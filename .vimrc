@@ -91,7 +91,8 @@ let g:tex_flavor = 'latex'
 
 """ Keybindings
 " Find next placeholder
-map <C-j> <ESC>/<++><CR>cf>
+imap <C-j> <ESC>/<++><CR>cf>
+nmap <C-j> <ESC>/<++><CR>cf>
 
 " Add any changes that are only for this machine in .vimrc.local
 if filereadable($HOME . "/.vimrc.local")
