@@ -8,11 +8,11 @@ autoload -Uz vcs_info
 # Change prompt
 setopt PROMPT_SUBST
 zstyle ':vcs_info:*' actionformats \
-	'%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+	'%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{6}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats \
-	'%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}]%f '
+	'%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{6}%b%F{3}]%f '
 precmd () { vcs_info }
-PS1='%F{5}[%F{2}%n@%m%F{5}] %F{3}%3~ ${vcs_info_msg_0_}%f%# '
+PS1='%F{5}[%F{6}%n@%m%F{5}] %F{3}%3~ ${vcs_info_msg_0_}%f%# '
 
 # Save command history
 HISTSIZE=1000
