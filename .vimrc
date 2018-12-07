@@ -13,7 +13,7 @@ set textwidth=120
 set backspace=indent,eol,start
 
 " Turn tabs into spaces
-set expandtab
+"set expandtab
 
 " Set size of tab for manual indenting
 set tabstop=4
@@ -100,6 +100,11 @@ let g:tex_flavor = 'latex'
 " Find next placeholder
 imap <C-j> <ESC>/<++><CR>cf>
 nmap <C-j> <ESC>/<++><CR>cf>
+
+call plug#begin()
+Plug 'SirVer/ultisnips'
+Plug 'lervag/vimtex'
+call plug#end()
 
 " Add any changes that are only for this machine in .vimrc.local
 if filereadable($HOME . "/.vimrc.local")
