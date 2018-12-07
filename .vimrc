@@ -106,6 +106,9 @@ Plug 'SirVer/ultisnips'
 Plug 'lervag/vimtex'
 call plug#end()
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
+
 " Add any changes that are only for this machine in .vimrc.local
 if filereadable($HOME . "/.vimrc.local")
 	source $HOME/.vimrc.local
