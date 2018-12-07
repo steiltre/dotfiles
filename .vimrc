@@ -28,7 +28,14 @@ set list listchars=tab:\ \ ,trail:·
 set laststatus=2
 
 " Set output in statusline
-set statusline=%f\ %=L:%l/%L\ (%p%%)
+set statusline=
+set statusline+=%f                                      " filename
+set statusline+=\ [%{strlen(&fenc)?&fenc:'none'},       " file encoding
+set statusline+=\ %{&ff}]                               " file format
+set statusline+=\ %h%m%r                                " help, modified, and read-only flags
+set statusline+=%=                                      " right align
+set statusline+=C:%c,                                   " cursor column
+set statusline+=\ L:%l/%L\ (%p%%)                       " cursor line / total lines (percentage)
 
 " UTF encoding
 set encoding=utf-8
