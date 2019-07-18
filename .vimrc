@@ -61,7 +61,7 @@ set notimeout
 set ttimeout
 
 set t_Co=256
-" Set solarized dark colors in Vim
+" Set colors in Vim
 syntax enable
 set background=dark
 colorscheme Tomorrow-Night
@@ -100,11 +100,6 @@ let g:tex_flavor = 'latex'
 " Find next placeholder
 imap <C-j> <ESC>/<++><CR>cf>
 nmap <C-j> <ESC>/<++><CR>cf>
-
-call plug#begin()
-Plug 'SirVer/ultisnips'
-Plug 'lervag/vimtex'
-call plug#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
