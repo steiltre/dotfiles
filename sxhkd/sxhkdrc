@@ -150,3 +150,21 @@ alt + n; alt + bracket{left,right}
 # Swap desktops
 alt + d; alt + shift + {1-9,0}
 	bspc desktop -s 'focused:^{1-9,10}' --follow
+
+#
+# function keys
+#
+
+# Volume controls
+XF86AudioRaiseVolume
+	pactl set-sink-volume 0 +5%
+XF86AudioLowerVolume
+	pactl set-sink-volume 0 -5%
+XF86AudioMute
+	/home/trevor/bin/toggle-mute
+
+# Add controls for screen brightness
+XF86MonBrightnessUp
+	 xbacklight -inc 10
+XF86MonBrightnessDown
+	 xbacklight -dec 10
