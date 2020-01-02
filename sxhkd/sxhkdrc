@@ -13,7 +13,7 @@ alt + Escape
 	pkill -USR1 -x sxhkd
 
 # toggle polybar
-alt + p
+alt + shift + p
 	polybar-msg cmd toggle
 
 #
