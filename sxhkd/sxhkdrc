@@ -4,7 +4,7 @@
 alt + Return
 	gnome-terminal
 
-# program launder
+# program launcher
 alt + @space
 	dmenu_run
 
@@ -12,13 +12,21 @@ alt + @space
 alt + Escape
 	pkill -USR1 -x sxhkd
 
+# toggle polybar
+alt + p
+	polybar-msg cmd toggle
+
 #
 # bspwm hotkeys
 #
 
-# quit/restart bspwm
-ctrl + alt + {e,r}
-	bspc {quit, wm -r}
+# restart bspwm
+ctrl + alt + r
+	bspc wm -r
+
+# quit bspwm
+ctrl + alt + e
+	yes_no_prompt "Would you like to exit bspwm?" "bspc quit"
 
 # close and kill
 alt + {_,shift + } q
@@ -72,8 +80,8 @@ alt + {grave,Tab}
 alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} 'focused:^{1-9,10}' --follow
 
-alt + b; alt + {_,shift + }{1-9,0};
-	bspc {desktop -f,node -d} '^{11,12,13,14,15,16,17,18,19,20}' --follow
+alt + a; alt + {_,shift + }{1-9,0};
+	bspc {desktop -f,node -d} 'focused:^{11,12,13,14,15,16,17,18,19,20}' --follow
 
 # focus or send to the given monitor
 alt + m; alt + {_,shift + }{1-9,0}:
