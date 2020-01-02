@@ -46,6 +46,9 @@ tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
+; Enable inter-process communication for use with polybar-msg
+enable-ipc = true
+
 ;wm-restack = bspwm
 ;wm-restack = i3
 
@@ -121,7 +124,10 @@ format-prefix = "CPU:"
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 ;label = %percentage:2%%
-label = %percentage-sum:04%
+;label = %percentage-sum:04%
+;clickable cpu usage
+label = %{A1:notify-send "CPU Hogs\:\n$(ps -acx --noheaders -o cmd\:15,%cpu --sort -%cpu | head)" :}%percentage-sum:04%%{A}
+
 
 ; Parameters for progress bar style cpu usage
 ;bar-load-width = 10
@@ -158,7 +164,9 @@ format = <label> <ramp-used>
 format-prefix = "MEM:"
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %gb_used%/%gb_total%
+; Clickable memory usage text
+label = %{A1:notify-send "Memory Hogs\:\n$(ps -acx --noheaders -o cmd\:15,%mem --sort -%mem | head)" :}%gb_used%/%gb_total%%{A}
+;label = %gb_used%/%gb_total%
 
 ; Indicators for ramp-used
 ramp-used-0 = ▁
