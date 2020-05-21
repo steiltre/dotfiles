@@ -2,7 +2,7 @@
 
 if [ "$(hostname)" = "VahRuta" ]; then
 	#xrandr --output HDMI-1 --pos 0x360 --primary --output DP-0 --pos 3840x1080 --output HDMI-0 --pos 3840x0
-	xrandr --output DP-0 --pos 3840x1080 --output HDMI-0 --pos 3840x0 --output HDMI-1 --pos 0x360
+	#xrandr --output DP-0 --pos 3840x1080 --output HDMI-0 --pos 3840x0 --output HDMI-1 --pos 0x360
 	#xrandr --output DP-0 --pos 3840x1080 --output HDMI-0 --pos 3840x0 --output HDMI-1 --pos 0x360 --output DP-2 --pos 0x2520
 
 	bspc wm --reorder-monitors HDMI-1 DP-0 HDMI-0
@@ -44,7 +44,7 @@ bspc config split_ratio			0.50
 bspc config borderless_monocle	true
 bspc config gapless_monocle		true
 bspc config focus_follows_pointer true
-bspc config pointer_follows_focus true
+bspc config pointer_follows_focus false
 bspc config automatic_scheme	longest_side
 
 bspc config remove_disabled_monitors	true
