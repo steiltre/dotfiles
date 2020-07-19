@@ -22,7 +22,7 @@ set tabstop=4
 set shiftwidth=4
 
 " Highlight trailing whitespace
-set list listchars=tab:\ \ ,trail:·
+"set list listchars=tab:\ \ ,trail:·
 
 " Set the status line to always be displayed
 set laststatus=2
@@ -101,7 +101,7 @@ let g:tex_flavor = 'latex'
 imap <C-j> <ESC>/<++><CR>cf>
 nmap <C-j> <ESC>/<++><CR>cf>
 
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'lervag/vimtex'
 call plug#end()
