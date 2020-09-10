@@ -22,7 +22,7 @@ set tabstop=4
 set shiftwidth=4
 
 " Highlight trailing whitespace
-set list listchars=tab:\ \ ,trail:·
+"set list listchars=tab:\ \ ,trail:·
 
 " Set the status line to always be displayed
 set laststatus=2
