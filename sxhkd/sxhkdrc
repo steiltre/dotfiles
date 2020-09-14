@@ -57,7 +57,7 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west, south, north, east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
+super + {u,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
@@ -65,11 +65,11 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
+super + {p,n}
 	bspc desktop -f {prev,next}.local
 
 # focus the next/previous monitor
-super + shift + bracket{left,right}
+super + m; {p,n}
 	bspc monitor -f {prev,next}
 
 # focus the last node/desktop
@@ -128,27 +128,27 @@ super + {Left, Down, Up, Right}
 #
 
 # Send node to neighbor node
-super + n; super + shift + {h,j,k,l}
+super + o; super + shift + {h,j,k,l}
 	bspc node -n {west, south, north, east}
 
 # Flip tree rooted at selected node
-super + n; super + {o,v}
+super + o; super + {o,v}
 	bspc node -F {horizontal,vertical}
 
 # Rotate the tree rooted at selected node
-super + n; super + {_, shift + } r
+super + o; super + {_, shift + } r
 	bspc node -R {90, 270}
 
 # Equalize (reset to default) split ratios of the tree rooted at selected node
-super + n; super + e
+super + o; super + e
 	bspc node -E
 
 # Balance split ratios of tree rooted at selected node
-super + n; super + b
+super + o; super + l
 	bspc node -B
 
 # Circulate windows of tree rooted at selected node
-super + n; super + bracket{left,right}
+super + o; super + {p,n}
 	bspc node -C {forward, backward}
 
 #
