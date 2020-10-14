@@ -60,6 +60,10 @@ set showmatch
 set notimeout
 set ttimeout
 
+" Add menu for command-line completion
+set wildmenu
+set wildmode=longest:full,full
+
 set t_Co=256
 " Set colors in Vim
 syntax enable
