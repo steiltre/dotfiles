@@ -1,0 +1,30 @@
+" Plugin manager
+call plug#begin('~/.vim_plug')
+
+" LaTeX compiler for Vim
+Plug 'lervag/vimtex'
+
+" Snippet engine
+Plug 'SirVer/ultisnips'
+
+" Unix commands in Vim
+Plug 'tpope/vim-eunuch'
+
+" Git integration with Vim
+Plug 'tpope/vim-fugitive'
+
+" Vim motions for surrounding characters
+Plug 'tpope/vim-surround'
+
+" Show git diff in 'gutter'
+"Plug 'airblade/vim-gitgutter'
+
+" File explorer for Vim
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+call plug#end()
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
+
+" NERDTree mappings
+:nmap <C-N> :NERDTreeToggle<CR>
