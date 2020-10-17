@@ -17,10 +17,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 " Show git diff in 'gutter'
-"Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " File explorer for Vim
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+
+" Floating terminal in Vim
+Plug 'voldikss/vim-floaterm'
+
 call plug#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
