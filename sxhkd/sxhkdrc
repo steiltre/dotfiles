@@ -2,7 +2,7 @@
 
 # terminal emulator
 super + Return
-	gnome-terminal
+	urxvt
 
 # program launcher
 super + @space
