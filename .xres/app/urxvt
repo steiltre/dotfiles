@@ -1,0 +1,56 @@
+#define URXVT_THEME SOLARIZED_DARK
+
+#define URXVT_BACKGROUND CONCAT(URXVT_THEME, _background)
+#define URXVT_FOREGROUND CONCAT(URXVT_THEME, _foreground)
+#define URXVT_COLOR0 CONCAT(URXVT_THEME, _color0)
+#define URXVT_COLOR1 CONCAT(URXVT_THEME, _color1)
+#define URXVT_COLOR2 CONCAT(URXVT_THEME, _color2)
+#define URXVT_COLOR3 CONCAT(URXVT_THEME, _color3)
+#define URXVT_COLOR4 CONCAT(URXVT_THEME, _color4)
+#define URXVT_COLOR5 CONCAT(URXVT_THEME, _color5)
+#define URXVT_COLOR6 CONCAT(URXVT_THEME, _color6)
+#define URXVT_COLOR7 CONCAT(URXVT_THEME, _color7)
+#define URXVT_COLOR8 CONCAT(URXVT_THEME, _color8)
+#define URXVT_COLOR9 CONCAT(URXVT_THEME, _color9)
+#define URXVT_COLOR10 CONCAT(URXVT_THEME, _color10)
+#define URXVT_COLOR11 CONCAT(URXVT_THEME, _color11)
+#define URXVT_COLOR12 CONCAT(URXVT_THEME, _color12)
+#define URXVT_COLOR13 CONCAT(URXVT_THEME, _color13)
+#define URXVT_COLOR14 CONCAT(URXVT_THEME, _color14)
+#define URXVT_COLOR15 CONCAT(URXVT_THEME, _color15)
+#define URXVT_FADING CONCAT(URXVT_THEME, _fading)
+#define URXVT_FADE_COLOR CONCAT(URXVT_THEME, _fadeColor)
+#define URXVT_CURSOR_COLOR CONCAT(URXVT_THEME, _cursorColor)
+#define URXVT_POINTER_COLOR_BACKGROUND CONCAT(URXVT_THEME, _pointerColorBackground)
+#define URXVT_POINTER_COLOR_FOREGROUND CONCAT(URXVT_THEME, _pointerColorForeground)
+
+URxvt*depth:	32
+URxvt*background: 		[95]URXVT_BACKGROUND
+URxvt*foreground: 		URXVT_FOREGROUND
+URxvt*color0: 			URXVT_COLOR0
+URxvt*color1: 			URXVT_COLOR1
+URxvt*color2: 			URXVT_COLOR2
+URxvt*color3: 			URXVT_COLOR3
+URxvt*color4: 			URXVT_COLOR4
+URxvt*color5: 			URXVT_COLOR5
+URxvt*color6: 			URXVT_COLOR6
+URxvt*color7: 			URXVT_COLOR7
+URxvt*color8: 			URXVT_COLOR8
+URxvt*color9: 			URXVT_COLOR9
+URxvt*color10: 			URXVT_COLOR10
+URxvt*color11: 			URXVT_COLOR11
+URxvt*color12: 			URXVT_COLOR12
+URxvt*color13: 			URXVT_COLOR13
+URxvt*color14: 			URXVT_COLOR14
+URxvt*color15: 			URXVT_COLOR15
+URxvt*fading:			URXVT_FADING
+URxvt*fadeColor:		URXVT_FADE_COLOR
+URxvt*cursorColor:		URXVT_CURSOR_COLOR
+URxvt*pointerColorBackground:	URXVT_POINTER_COLOR_BACKGROUND
+URxvt*pointerColorForeground:	URXVT_POINTER_COLOR_FOREGROUND
+
+URxvt*font: xft:Ubuntu Mono:size=11
+URxvt*scrollBar_right:	true
+
+!! Disable searchable-scrollback keybinding to avoid conflict with my .tmux.conf
+URxvt.perl-ext-common:	"default, -searchable-scrollback"

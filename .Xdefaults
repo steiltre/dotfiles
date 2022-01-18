@@ -1,0 +1,9 @@
+!! Macros for setting themes (used in application configs)
+#define CONCAT_SUB(PREF, SUFF) PREF ## SUFF
+#define CONCAT(PREF, SUFF) CONCAT_SUB(PREF, SUFF)
+
+!! Themes
+#include "/home/trevor/.xres/themes/solarized_dark"
+
+!! Individual application configs
+#include "/home/trevor/.xres/app/urxvt"
