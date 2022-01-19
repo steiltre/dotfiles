@@ -1,0 +1,18 @@
+!! Macros for setting themes (used in application configs)
+#define CONCAT_SUB(PREF, SUFF) PREF ## SUFF
+#define CONCAT(PREF, SUFF) CONCAT_SUB(PREF, SUFF)
+
+!! Themes
+#include "/home/trevor/.xres/themes/solarized_dark"
+#include "/home/trevor/.xres/themes/solarized_light"
+
+!! Individual application configs
+#include "/home/trevor/.xres/app/urxvt"
+
+Xcursor.size: 16
+
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+!!Xft.dpi: 96
+Xft.font: Ubuntu Mono:size=11
