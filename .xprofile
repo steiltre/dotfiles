@@ -1,0 +1,7 @@
+SYSRESOURCES=/etc/X11/Xresources
+USRRESOURCES=$HOME/.Xresources
+
+xrandr --output HDMI-1 --pos 3840x1080 --output HDMI-0 --pos 3840x0 --output DP-0 --pos 0x360
+~/bin/wp-load
+
+compton &
