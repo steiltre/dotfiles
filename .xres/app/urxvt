@@ -49,7 +49,7 @@ URxvt*cursorColor:		URXVT_CURSOR_COLOR
 URxvt*pointerColorBackground:	URXVT_POINTER_COLOR_BACKGROUND
 URxvt*pointerColorForeground:	URXVT_POINTER_COLOR_FOREGROUND
 
-URxvt*font: xft:Ubuntu Mono:size=11
+URxvt*font: xft:Ubuntu Mono:size=12
 URxvt*scrollBar_right:	true
 
 !! Disable searchable-scrollback keybinding to avoid conflict with my .tmux.conf

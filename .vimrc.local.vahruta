@@ -36,3 +36,6 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 " Floaterm options
 let g:floaterm_keymap_toggle = '<leader>t'
 let g:floaterm_autoclose = 1
+
+" vimtex options
+let g:vimtex_view_general_viewer = 'okular'
