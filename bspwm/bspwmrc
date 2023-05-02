@@ -31,7 +31,7 @@ if [ "$(hostname)" = "VahRuta" ]; then
 	bspc wm --reorder-monitors DisplayPort-0 DisplayPort-1 HDMI-A-0
 
 	#bspc rule -a Gimp desktop='4-1' state=floating follow=on
-	bspc rule -a steamwebhelper desktop='2-20' follow=on
+	bspc rule -a steam desktop='2-20' follow=on
 	bspc rule -a zoom desktop='2-19' follow=on
 
 	steam &
