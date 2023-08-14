@@ -49,3 +49,4 @@ bindkey -v
 if [[ -a ~/.zshrc.local ]]; then
 	source ~/.zshrc.local
 fi
+fpath+=${ZDOTDIR:-~}/.zsh_functions

@@ -14,5 +14,5 @@ Xcursor.size: 16
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
-#Xft.dpi: 96
+//Xft.dpi: 96
 Xft.font: Ubuntu Mono:size=11
