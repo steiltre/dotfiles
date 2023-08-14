@@ -2,6 +2,10 @@
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
+# Unicode support
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
 # Allow access to git status
 autoload -Uz vcs_info
 
@@ -45,3 +49,4 @@ bindkey -v
 if [[ -a ~/.zshrc.local ]]; then
 	source ~/.zshrc.local
 fi
+fpath+=${ZDOTDIR:-~}/.zsh_functions

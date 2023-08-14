@@ -1,5 +1,5 @@
 # Set path
-PATH+=:~/bin
+PATH+=:~/bin:~/.local/bin
 
 # Open vim with clientserver (for vimtex)
 alias vim='vim --servername VIM'
