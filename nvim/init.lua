@@ -11,23 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({"lervag/vimtex",
-	"SirVer/ultisnips",
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		--opts = {style = "day"},
-		--config = function()
-			--vim.cmd([[colorscheme tokyonight]])
-		--end,
-	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-	}
-})
+require("lazy").setup("plugins")
+require("lsp")
+vim.lsp.set_log_level("debug")
 
 --require("tokyonight").setup({
 	--style="storm"
