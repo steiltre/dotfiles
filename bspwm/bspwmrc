@@ -34,6 +34,8 @@ if [ "$(hostname)" = "VahRuta" ]; then
 	bspc rule -a steam desktop='2-20' follow=on
 	bspc rule -a zoom desktop='2-19' follow=on
 
+  udiskie &
+
 	steam &
 
 elif [ "$(hostname)" = "moblin" ]; then
