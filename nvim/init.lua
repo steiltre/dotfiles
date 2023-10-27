@@ -99,5 +99,6 @@ vim.g.tex_flavor = 'latex'
 -- Keybindings
 vim.api.nvim_set_keymap('i', '<C-j>', '<esc>/<++><CR>cf>', {})
 vim.api.nvim_set_keymap('n', '<C-j>', '<esc>/<++><CR>cf>', {})
+vim.api.nvim_set_keymap('n', '<C-N>', ':NERDTreeToggle<CR>', {})
 
 require('local_init')
