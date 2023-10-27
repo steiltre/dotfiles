@@ -1,6 +1,9 @@
 return {
   "lervag/vimtex",
 	--"SirVer/ultisnips",
+  {
+    "preservim/nerdtree"
+  },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
