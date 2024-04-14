@@ -4,6 +4,9 @@ return {
   {
     "preservim/nerdtree"
   },
+  {
+    "airblade/vim-gitgutter"
+  },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
