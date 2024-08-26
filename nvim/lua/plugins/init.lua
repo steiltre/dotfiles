@@ -1,3 +1,5 @@
+vim.g.floaterm_keymap_toggle = '<Leader>t'
+
 return {
   "lervag/vimtex",
 	--"SirVer/ultisnips",
@@ -18,5 +20,9 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 	},
-  "neovim/nvim-lspconfig"
+  "neovim/nvim-lspconfig",
+  {
+    "voldikss/vim-floaterm",
+    lazy = false
+  }
 }
