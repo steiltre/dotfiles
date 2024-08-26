@@ -9,3 +9,5 @@ eval `dircolors ~/.dircolors`
 
 # Set ls to automatically color output
 alias ls='ls --color -F'
+
+export NOTES_ROOT=~/sitting_castle_notes

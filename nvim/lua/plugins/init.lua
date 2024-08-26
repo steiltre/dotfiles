@@ -21,5 +21,10 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 	},
-  "neovim/nvim-lspconfig"
+  "neovim/nvim-lspconfig",
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  }
 }
