@@ -4,6 +4,7 @@ local lspconfig = require('lspconfig')
 lspconfig.clangd.setup {}
 lspconfig.pyright.setup{}
 lspconfig.marksman.setup{}
+lspconfig.bashls.setup{}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
