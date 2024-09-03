@@ -9,21 +9,25 @@ return {
   {
     "airblade/vim-gitgutter"
   },
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		--opts = {style = "day"},
-		--config = function()
-			--vim.cmd([[colorscheme tokyonight]])
-		--end,
-	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-	},
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    --opts = {style = "day"},
+    --config = function()
+    --vim.cmd([[colorscheme tokyonight]])
+    --end,
+  },
+  {
+	  "catppuccin/nvim",
+	  name = "catppuccin",
+	  priority = 1000,
+  },
   "neovim/nvim-lspconfig",
+  {
+    "voldikss/vim-floaterm",
+    lazy = false
+  },
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
