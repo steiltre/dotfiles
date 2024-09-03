@@ -1,3 +1,5 @@
+vim.g.floaterm_keymap_toggle = '<Leader>t'
+
 return {
   "lervag/vimtex",
 	--"SirVer/ultisnips",
@@ -26,5 +28,9 @@ return {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  {
+    "voldikss/vim-floaterm",
+    lazy = false
   }
 }
