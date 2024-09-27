@@ -39,8 +39,8 @@ font-1 = unifont:fontformat=truetype:size=14:antialias=false;0
 font-2 = siji:pixelsize=14;1
 
 modules-left = bspwm
-modules-center =
-modules-right = filesystem pulseaudio memory cpu wlan eth battery temperature date
+modules-center = 
+modules-right = filesystem pulseaudio memory cpu temperature wlan eth battery date
 
 tray-position = right
 tray-padding = 2
@@ -333,8 +333,8 @@ animation-discharging-framerate = 750
 [module/temperature]
 type = internal/temperature
 #thermal-zone = 0
-hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
-warn-temperature = 60
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp2_input
+warn-temperature = 68
 
 format = <ramp> <label>
 format-underline = #f50a4d
