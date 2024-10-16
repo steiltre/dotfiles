@@ -21,11 +21,11 @@ super + shift + p
 #
 
 # restart bspwm
-ctrl + super + r
+alt + super + r
 	bspc wm -r
 
 # quit bspwm
-ctrl + super + e
+alt + super + e
 	yes_no_prompt "Would you like to exit bspwm?" "bspc quit"
 
 # close and kill

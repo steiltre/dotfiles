@@ -1,11 +1,10 @@
 SYSRESOURCES=/etc/X11/Xresources
 USRRESOURCES=$HOME/.Xresources
 
-#xrandr --output HDMI-1 --pos 3840x1080 --output HDMI-0 --pos 3840x0 --output DP-0 --pos 0x360
-xrandr --output DisplayPort-1 --mode 2560x1440 --pos 3840x1080 --rate 95.00 --output HDMI-A-0 --mode 1920x1080 --pos 3840x0 --output DisplayPort-0 --mode 3840x2160 --pos 0x360 --dpi 96
-#~/bin/wp-load
-
-compton &
-
 xset +fp /home/trevor/.local/share/fonts
 xset fp rehash
+
+#xrandr --output HDMI-1 --pos 3840x1080 --output HDMI-0 --pos 3840x0 --output DP-0 --pos 0x360
+xrandr --output DisplayPort-1 --mode 2560x1440 --pos 3840x1080 --rate 95.00 --output HDMI-A-0 --mode 1920x1080 --pos 3840x0 --output DisplayPort-0 --mode 3840x2160 --pos 0x360 --dpi 96
+
+exec bspwm

@@ -59,3 +59,4 @@ zstyle :compinstall filename '/home/trevor/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+. "/home/trevor/.deno/env"
