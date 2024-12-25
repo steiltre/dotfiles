@@ -1,0 +1,43 @@
+#! /bin/sh
+
+wp-load
+
+compton &
+
+sxhkd &
+"$HOME"/.config/polybar/launch.sh
+xrdb -merge ~/.Xresources
+
+bspc config border_width		4
+bspc config window_gap			12
+
+bspc config split_ratio			0.50
+bspc config borderless_monocle	true
+bspc config gapless_monocle		true
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus false
+bspc config automatic_scheme	longest_side
+
+bspc config remove_disabled_monitors	true
+bspc config remove_unplugged_monitors	true
+
+bspc config focused_border_color "#811919"
+
+if [ "$(hostname)" = "hestu" ]; then
+	bspc monitor DisplayPort-0 -d 1-1 1-2 1-3 1-4 1-5 1-6 1-7 1-8 1-9 1-10
+	bspc monitor DisplayPort-1 -d 2-1 2-2 2-3 2-4 2-5 2-6 2-7 2-8 2-9 2-10
+	bspc monitor HDMI-A-0 -d 3-1 3-2 3-3 3-4 3-5 3-6 3-7 3-8 3-9 3-10
+
+	bspc wm --reorder-monitors DisplayPort-0 DisplayPort-1 HDMI-A-0
+
+	#bspc rule -a Gimp desktop='4-1' state=floating follow=on
+	bspc rule -a steam desktop='2-10' follow=on
+	bspc rule -a zoom desktop='2-9' follow=on
+
+	udiskie &
+
+	steam &
+
+elif [ "$(hostname)" = "moblin" ]; then
+	bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
+fi

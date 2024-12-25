@@ -1,0 +1,14 @@
+#! /bin/sh
+
+sxhkd &
+$HOME/.config/polybar/launch.sh
+
+# Resize and rename default monitor
+bspc monitor -g 1200x1440+0+0
+bspc monitor -n Monitor1
+bspc monitor -d 1 2 3
+
+# Create new monitor
+bspc wm -a Monitor2 800x1200+1300+100
+bspc monitor Monitor2 --focus
+bspc monitor -d 1 3 4

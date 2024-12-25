@@ -1,0 +1,57 @@
+" Clang-format
+let g:clang_format_path = "/usr/bin/clang-format"
+map <C-K> :py3f /usr/share/clang/clang-format-14/clang-format.py<cr>
+imap <C-K> <c-o> :py3f /usr/share/clang/clang-format-14/clang-format.py<cr>
+
+function Formatonsave()
+  let l:lines="all"
+  py3f /usr/share/clang/clang-format-14/clang-format.py
+endfunction
+autocmd BufWritePre *.h,*.cpp,*.hpp,*.ipp call Formatonsave()
+
+" Plugin manager
+"if !has('nvim')
+	call plug#begin('~/.vim_plug')
+
+	" LaTeX compiler for Vim
+	Plug 'lervag/vimtex'
+
+	" Snippet engine
+	Plug 'SirVer/ultisnips'
+
+	" Unix commands in Vim
+	Plug 'tpope/vim-eunuch'
+
+	" Git integration with Vim
+	Plug 'tpope/vim-fugitive'
+
+	" Vim motions for surrounding characters
+	Plug 'tpope/vim-surround'
+
+	" Show git diff in 'gutter'
+	Plug 'airblade/vim-gitgutter'
+
+	" File explorer for Vim
+	Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+
+	" Floating terminal in Vim
+	Plug 'voldikss/vim-floaterm'
+
+	call plug#end()
+"endif
+
+if has('nvim')
+endif
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
+
+" NERDTree mappings
+:nmap <C-N> :NERDTreeToggle<CR>
+
+" Floaterm options
+let g:floaterm_keymap_toggle = '<leader>t'
+let g:floaterm_autoclose = 1
+
+" vimtex options
+let g:vimtex_view_general_viewer = 'okular'

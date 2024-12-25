@@ -1,0 +1,6 @@
+
+#import = ["~/.config/alacritty/colors/solarized_dark.toml"]
+import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+
+[window]
+opacity = 0.99

@@ -1,0 +1,179 @@
+#
+
+# terminal emulator
+super + Return
+	alacritty
+
+# program launcher
+super + @space
+	dmenu_run
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# toggle polybar
+super + shift + p
+	polybar-msg cmd toggle
+
+#
+# bspwm hotkeys
+#
+
+# restart bspwm
+alt + super + r
+	bspc wm -r
+
+# quit bspwm
+alt + super + e
+	yes_no_prompt "Would you like to exit bspwm?" "bspc quit"
+
+# close and kill
+super + {_,shift + } q
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + f
+	bspc desktop -l next
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west, south, north, east}
+
+# focus the node for the given path jump
+super + {u,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous node in the current desktop
+super + {_,shift + }c
+	bspc node -f {next,prev}.local
+
+# focus the next/previous desktop in the current monitor
+super + {p,n}
+	bspc desktop -f {prev,next}.local
+
+# focus the next/previous monitor
+super + m; {p,n}
+	bspc monitor -f {prev,next}
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} 'focused:^{1-9,10}' --follow
+
+# focus or send to extended workspaces
+#super + a; super + {_,shift + }{1-9,0};
+	#bspc {desktop -f,node -d} 'focused:^{11,12,13,14,15,16,17,18,19,20}' --follow
+
+# focus or send to the given monitor
+super + m; super + {_,shift + }{1-9,0}:
+	bspc {monitor -f, node -m} '^{1-9,10}' --follow
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west, south, north, east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its sides outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
+
+# contract a window by moving one of its sides inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0, top 0 20, bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left, Down, Up, Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# node layout
+#
+
+# Send node to neighbor node
+super + o; super + shift + {h,j,k,l}
+	bspc node -n {west, south, north, east}
+
+# Flip tree rooted at selected node
+super + o; super + {o,v}
+	bspc node -F {horizontal,vertical}
+
+# Rotate the tree rooted at selected node
+super + o; super + {_, shift + } r
+	bspc node -R {90, 270}
+
+# Equalize (reset to default) split ratios of the tree rooted at selected node
+super + o; super + e
+	bspc node -E
+
+# Balance split ratios of tree rooted at selected node
+super + o; super + l
+	bspc node -B
+
+# Circulate windows of tree rooted at selected node
+super + o; super + {p,n}
+	bspc node -C {forward, backward}
+
+#
+# desktop layout
+#
+
+# Swap desktops
+super + d; super + shift + {1-9,0}
+	bspc desktop -s 'focused:^{1-9,10}' --follow
+
+#
+# function keys
+#
+
+# Volume controls
+XF86AudioRaiseVolume
+	pactl set-sink-volume 0 +5%
+XF86AudioLowerVolume
+	pactl set-sink-volume 0 -5%
+XF86AudioMute
+	/home/trevor/bin/toggle-mute
+
+# Add controls for screen brightness
+XF86MonBrightnessUp
+	 xbacklight -inc 10
+XF86MonBrightnessDown
+	 xbacklight -dec 10
