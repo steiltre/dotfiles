@@ -2,7 +2,7 @@
 
 wp-load
 
-compton &
+picom &
 
 sxhkd &
 "$HOME"/.config/polybar/launch.sh
