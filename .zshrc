@@ -45,8 +45,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # Use vim-like keybindings in terminal
 bindkey -v
 
-# command for managing dotfiles
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+
 # Add in local zsh config
 if [[ -a ~/.zshrc.local ]]; then
 	source ~/.zshrc.local
