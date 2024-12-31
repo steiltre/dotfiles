@@ -101,4 +101,6 @@ vim.api.nvim_set_keymap('i', '<C-j>', '<esc>/<++><CR>cf>', {})
 vim.api.nvim_set_keymap('n', '<C-j>', '<esc>/<++><CR>cf>', {})
 
 require('keybindings')
-require('local_init')
+if vim.fn.filereadable(vim.fn.expand('~/.config/nvim/lua/local_init.lua')) == 1 then
+  require('local_init')
+end
