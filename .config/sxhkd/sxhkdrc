@@ -6,7 +6,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+	dmenu_run -fn 'UbuntuMono Nerd Font-14'
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -26,7 +26,7 @@ alt + super + r
 
 # quit bspwm
 alt + super + e
-	yes_no_prompt "Would you like to exit bspwm?" "bspc quit"
+	/home/trevor/.local/bin/yes_no_prompt "Would you like to exit bspwm?" "bspc quit"
 
 # close and kill
 super + {_,shift + } q
@@ -174,6 +174,6 @@ XF86AudioMute
 
 # Add controls for screen brightness
 XF86MonBrightnessUp
-	 xbacklight -inc 10
+   brightnessctl set +10
 XF86MonBrightnessDown
-	 xbacklight -dec 10
+   brightnessctl set 10-
