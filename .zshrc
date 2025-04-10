@@ -51,14 +51,3 @@ alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 if [[ -a ~/.zshrc.local ]]; then
 	source ~/.zshrc.local
 fi
-fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-# The following lines were added by compinstall
-
-zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/trevor/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-. "/home/trevor/.deno/env"

@@ -11,3 +11,16 @@ eval `dircolors ~/.dircolors`
 alias ls='ls --color -F'
 
 export SITTING_CASTLE_ROOT=~/sitting_castle_notes
+
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+. "/home/trevor/.deno/env"
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/home/trevor/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
