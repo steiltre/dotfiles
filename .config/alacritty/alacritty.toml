@@ -1,12 +1,13 @@
 
 #import = ["~/.config/alacritty/colors/solarized_dark.toml"]
-general.import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+#general.import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+import = [
+  "~/.config/alacritty/themes/themes/gruvbox_dark.toml",
+  "~/.config/alacritty/alacritty.local.toml"
+]
 
 [window]
 opacity = 0.99
-
-[font]
-size = 14.0
 
 [font.normal]
 family = "UbuntuMono Nerd Font Mono"
