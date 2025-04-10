@@ -6,3 +6,9 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+-- render-markdown
+vim.keymap.set('n', '<leader>rm', ':RenderMarkdown buf_toggle<CR>', {})
+
+-- Markdown Preview
+vim.keymap.set('n', '<leader>mp', '<Plug>MarkdownPreviewToggle', {})
