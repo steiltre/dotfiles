@@ -1,5 +1,5 @@
 # Set path
-PATH+=:~/bin:~/.local/bin
+PATH+=:~/bin:~/.local/bin:/opt/nvim-linux64/bin
 
 # Open vim with clientserver (for vimtex)
 alias vim='vim --servername VIM'
