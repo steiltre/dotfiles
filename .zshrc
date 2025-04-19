@@ -47,6 +47,15 @@ bindkey -v
 
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
+# Fix ls colors for solarized dark
+eval `dircolors ~/.dircolors`
+
+# Set ls to automatically color output
+alias ls='ls --color -F'
+
+# Make CMake always generate files for LSPs
+alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=On'
+
 # Add in local zsh config
 if [[ -a ~/.zshrc.local ]]; then
 	source ~/.zshrc.local

@@ -4,12 +4,6 @@ PATH+=:~/bin:~/.local/bin:/opt/nvim-linux64/bin
 # Open vim with clientserver (for vimtex)
 alias vim='vim --servername VIM'
 
-# Fix ls colors for solarized dark
-eval `dircolors ~/.dircolors`
-
-# Set ls to automatically color output
-alias ls='ls --color -F'
-
 export SITTING_CASTLE_ROOT=~/sitting_castle_notes
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
