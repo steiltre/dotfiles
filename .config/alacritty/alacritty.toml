@@ -1,11 +1,4 @@
 
-#import = ["~/.config/alacritty/colors/solarized_dark.toml"]
-#general.import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
-import = [
-  "~/.config/alacritty/themes/themes/gruvbox_dark.toml",
-  "~/.config/alacritty/alacritty.local.toml"
-]
-
 [window]
 opacity = 0.99
 
@@ -24,3 +17,12 @@ style = "Bold Italic"
 [font.italic]
 family = "UbuntuMono Nerd Font Mono"
 style = "Italic"
+
+[general]
+
+#import = ["~/.config/alacritty/colors/solarized_dark.toml"]
+#general.import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+import = [
+  "~/.config/alacritty/themes/themes/gruvbox_dark.toml",
+  "~/.config/alacritty/alacritty.local.toml"
+]
