@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
+require("plugin_settings")
 require("lsp")
 vim.lsp.set_log_level("debug")
 
@@ -104,3 +105,5 @@ require('keybindings')
 if vim.fn.filereadable(vim.fn.expand('~/.config/nvim/lua/local_init.lua')) == 1 then
   require('local_init')
 end
+
+require('custom.snippets')
