@@ -2,22 +2,6 @@
 [window]
 opacity = 0.99
 
-[font.normal]
-family = "UbuntuMono Nerd Font Mono"
-style = "Regular"
-
-[font.bold]
-family = "UbuntuMono Nerd Font Mono"
-style = "Bold"
-
-[font.bold_italic]
-family = "UbuntuMono Nerd Font Mono"
-style = "Bold Italic"
-
-[font.italic]
-family = "UbuntuMono Nerd Font Mono"
-style = "Italic"
-
 [general]
 
 #import = ["~/.config/alacritty/colors/solarized_dark.toml"]
