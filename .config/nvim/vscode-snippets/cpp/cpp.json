@@ -1,0 +1,42 @@
+{
+    "Starter Template": {
+    "prefix": "st",
+    "body": [
+        "#include <iostream>",
+        "",
+        "int main (int argc, char *argv[]) {",
+            "\t$1",
+            "",
+            "\treturn 0;",
+        "}"
+        ],
+        "description": "Standard starter template for a tiny C++ program"
+    },
+    "Function Doxygen Template": {
+    "prefix": "funcdox",
+    "body": [
+        "/**",
+        " * @brief $1",
+        " *",
+        " * @tparam $2",
+        " * @param $3",
+        " * @return $4",
+        "*/"
+    ],
+    "description": "Doxygen template for functions"
+    },
+    "Class Doxygen Template": {
+    "prefix": "classdox",
+    "body": [
+        "/**",
+        " * @brief $1",
+        " *",
+        " * \\code{.cpp}",
+        " * $2",
+        " * \\endcode",
+        " *",
+        "*/"
+    ],
+    "description": "Doxygen template for classes"
+    }
+}
