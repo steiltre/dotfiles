@@ -1,6 +1,6 @@
 #! /bin/sh
 
-/home/trevor/bin/wp-load
+/home/trevor/.local/bin/wp-load
 
 picom &
 
