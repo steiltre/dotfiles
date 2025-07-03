@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 require("plugin_settings")
 require("lsp")
-vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("WARN")
 
 --require("tokyonight").setup({
 	--style="storm"
