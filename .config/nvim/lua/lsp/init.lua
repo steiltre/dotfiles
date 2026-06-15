@@ -1,10 +1,10 @@
 -- Setup language servers.
-local lspconfig = require('lspconfig')
+--local lspconfig = vim.lsp.config()
 
-lspconfig.clangd.setup {}
-lspconfig.pyright.setup{}
-lspconfig.marksman.setup{}
-lspconfig.bashls.setup{}
+vim.lsp.enable('clangd')
+vim.lsp.enable('pyright')
+vim.lsp.enable('marksman')
+vim.lsp.enable('bashls')
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
