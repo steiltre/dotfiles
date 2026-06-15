@@ -1,6 +1,6 @@
 # Set editor
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # Unicode support
 export LANG="en_US.UTF-8"
