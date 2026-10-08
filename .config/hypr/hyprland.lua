@@ -108,6 +108,11 @@ hl.window_rule({
 -- MIGRATION_NOTE: Empty monitor output — Hyprland may ignore this entry
 hl.monitor({ output = "", position = "auto" })
 
+-----------------------------
+--
+-- Keybindings
+--
+-----------------------------
 hl.bind(mainMod .. " + Return", function()
     hl.exec_cmd(terminal)
 end)
@@ -165,6 +170,12 @@ end
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special({ "magic" }))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.focus({ workspace = "special:magic" }))
 
+hl.bind(mainMod .. " + A", function()
+  hl.config({
+    animations = { enabled = toggle }
+  })
+end)
+
 hl.bind(mainMod .. " + G", hl.dsp.submap( "groups" ))
 
 hl.define_submap("groups", function()
@@ -213,6 +224,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 end)
 
+-- Animations
 hl.curve("easeOutQuint", {
     type = "bezier",
     points = { {0.23, 1.0}, {0.32, 1.0} }
