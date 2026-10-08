@@ -253,6 +253,12 @@ hl.curve("quick", {
     type = "bezier",
     points = { {0.15, 0.0}, {0.1, 1.0} }
 })
+hl.curve("rubber", {
+  type = "spring",
+  mass = 1,
+  stiffness = 7,
+  dampening = 1
+})
 
 hl.animation({
     leaf = "global",
@@ -283,13 +289,13 @@ hl.animation({
     leaf = "windowsOut",
     enabled = true,
     speed = 1.49,
-    bezier = "linear",
+    spring = "rubber",
     style = "popin 87%",
 })
 hl.animation({
     leaf = "fadeIn",
     enabled = true,
-    speed = 1.73,
+    speed = 2.73,
     bezier = "almostLinear",
 })
 hl.animation({
@@ -346,14 +352,14 @@ hl.animation({
 hl.animation({
     leaf = "workspacesIn",
     enabled = true,
-    speed = 1.21,
-    bezier = "almostLinear",
-    style = "fade",
+    speed = 2.21,
+    bezier = "easeOutQuint",
+    style = "slidevert",
 })
 hl.animation({
     leaf = "workspacesOut",
     enabled = true,
-    speed = 1.94,
-    bezier = "almostLinear",
-    style = "fade",
+    speed = 2.5,
+    bezier = "easeInOutCubic",
+    style = "slide",
 })
