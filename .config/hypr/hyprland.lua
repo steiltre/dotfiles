@@ -171,9 +171,17 @@ hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special({ "magic" }))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.focus({ workspace = "special:magic" }))
 
 hl.bind(mainMod .. " + A", function()
-  hl.config({
-    animations = { enabled = toggle }
-  })
+  local is_animated = (hl.get_config("animations.enabled") == true)
+
+  if is_animated then
+    hl.config({
+      animations = { enabled = false }
+    })
+  else
+    hl.config({
+      animations = { enabled = true }
+    })
+  end
 end)
 
 hl.bind(mainMod .. " + G", hl.dsp.submap( "groups" ))
