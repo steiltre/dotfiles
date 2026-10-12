@@ -47,7 +47,7 @@ hl.config({
         },
     },
     input = {
-        follow_mouse = 2,
+        follow_mouse = 1,
         kb_layout = "us",
         kb_model = "",
         kb_options = "",
@@ -66,16 +66,22 @@ hl.config({
         force_zero_scaling = true,
     },
     debug = {
-        disable_logs = true,
+        disable_logs = false,
     },
     cursor = {
-        no_warps = true,
+        no_warps = false,
+        persistent_warps = true,
+        inactive_timeout = 5,
     },
     dwindle = {
         force_split = 2,
         preserve_split = true,
     }
   })
+
+require("utilities")
+
+require("monitors." .. get_hostname())
 
 --master = {
     --new_status = "master",
@@ -104,9 +110,6 @@ hl.window_rule({
     },
     no_focus = true,
 })
-
--- MIGRATION_NOTE: Empty monitor output — Hyprland may ignore this entry
-hl.monitor({ output = "", position = "auto" })
 
 -----------------------------
 --
@@ -153,7 +156,14 @@ hl.bind(mainMod .. " + Period", hl.dsp.window.resize({ x = 0, y = -10 }), { repe
 hl.bind(mainMod .. " + Comma", hl.dsp.window.resize({ x = 0, y = 10 }), { repeating = true })
 
 for i = 1, 10 do
-    hl.bind(mainMod .. " + " .. (i % 10), hl.dsp.focus({ workspace = tostring(i % 10) }))
+    hl.bind(mainMod .. " + " .. (i % 10), function()
+      local monitor_adjusted_workspace = hl.get_active_workspace().monitor.id * 10 + (i % 10)
+      if (i == 10) then monitor_adjusted_workspace = monitor_adjusted_workspace + 10 end
+      hl.dispatch(hl.dsp.focus({ 
+        workspace = tostring(monitor_adjusted_workspace),
+        on_current_monitor = true
+      }))
+    end)
 end
 
 hl.bind(mainMod .. " + P", function()
@@ -164,7 +174,13 @@ hl.bind(mainMod .. " + N", function()
 end)
 
 for i = 1, 10 do
-    hl.bind(mainMod .. " + SHIFT + " .. (i % 10), hl.dsp.focus({ workspace = tostring(i % 10) }))
+    hl.bind(mainMod .. " + SHIFT + " .. (i % 10), function()
+      local monitor_adjusted_workspace = hl.get_active_workspace().monitor.id * 10 + (i % 10)
+      if (i == 10) then monitor_adjusted_workspace = monitor_adjusted_workspace + 10 end
+      hl.dispatch(hl.dsp.window.move({ 
+        workspace = tostring(monitor_adjusted_workspace)
+      }))
+    end)
 end
 
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special({ "magic" }))
@@ -230,6 +246,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("/home/trevor/.local/bin/wp-load")
     hl.exec_cmd("waybar")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("hyprctl reload") -- Shouldn't be necessary, but need this to get monitor rules to show up on start-up
 end)
 
 -- Animations
@@ -363,3 +380,4 @@ hl.animation({
     bezier = "easeInOutCubic",
     style = "slide",
 })
+
