@@ -142,14 +142,14 @@ hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.swap({ direction = "left" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.swap({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.swap({ direction = "down" }))
-hl.bind(mainMod .. " + L", hl.dsp.window.move({ x = 10, y = 0 }))
-hl.bind(mainMod .. " + H", hl.dsp.window.move({ x = -10, y = 0 }))
-hl.bind(mainMod .. " + J", hl.dsp.window.move({ x = 0, y = 10 }))
-hl.bind(mainMod .. " + K", hl.dsp.window.move({ x = 0, y = -10 }))
-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
-hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
+-- hl.bind(mainMod .. " + L", hl.dsp.window.move({ x = 10, y = 0 }))
+-- hl.bind(mainMod .. " + H", hl.dsp.window.move({ x = -10, y = 0 }))
+-- hl.bind(mainMod .. " + J", hl.dsp.window.move({ x = 0, y = 10 }))
+-- hl.bind(mainMod .. " + K", hl.dsp.window.move({ x = 0, y = -10 }))
+-- hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
+-- hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
+-- hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
+-- hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 hl.bind(mainMod .. " + SHIFT + Comma", hl.dsp.window.resize({ x = -10, y = 0 }), { repeating = true })
 hl.bind(mainMod .. " + SHIFT + Period", hl.dsp.window.resize({ x = 10, y = 0 }), { repeating = true })
 hl.bind(mainMod .. " + Period", hl.dsp.window.resize({ x = 0, y = -10 }), { repeating = true })
@@ -165,6 +165,31 @@ for i = 1, 10 do
       }))
     end)
 end
+
+-- hl.bind(mainMod .. " + M + 1 ", hl.dsp.focus({ monitor = "1" }))
+hl.bind(mainMod .. " + M", hl.dsp.submap( "monitors" ))
+
+hl.define_submap("monitors", function()
+  for i = 1, 9 do
+    hl.bind(mainMod .. " + " .. i, function()
+      local monitors = hl.get_monitors()
+      if (i <= #monitors) then
+        hl.dispatch(hl.dsp.focus({ monitor = tostring(monitors[i].id) }))
+      end
+      hl.dispatch(hl.dsp.submap("reset"))
+    end)
+
+    hl.bind(mainMod .. " + SHIFT + " .. i, function()
+      local monitors = hl.get_monitors()
+      if (i <= #monitors) then
+        hl.dispatch(hl.dsp.window.move({ monitor = tostring(monitors[i].id) }))
+      end
+      hl.dispatch(hl.dsp.submap("reset"))
+    end)
+  end
+
+  hl.bind(mainMod .. " + M", hl.dsp.submap("reset"))
+end)
 
 hl.bind(mainMod .. " + P", function()
     hl.exec_cmd("$HOME/.config/hypr/scripts/prev_workspace.sh")
