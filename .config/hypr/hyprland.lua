@@ -138,22 +138,43 @@ hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.swap({ direction = "left" }))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.swap({ direction = "right" }))
-hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.swap({ direction = "up" }))
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.swap({ direction = "down" }))
--- hl.bind(mainMod .. " + L", hl.dsp.window.move({ x = 10, y = 0 }))
--- hl.bind(mainMod .. " + H", hl.dsp.window.move({ x = -10, y = 0 }))
--- hl.bind(mainMod .. " + J", hl.dsp.window.move({ x = 0, y = 10 }))
--- hl.bind(mainMod .. " + K", hl.dsp.window.move({ x = 0, y = -10 }))
--- hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
--- hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
--- hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
--- hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
-hl.bind(mainMod .. " + SHIFT + Comma", hl.dsp.window.resize({ x = -10, y = 0 }), { repeating = true })
-hl.bind(mainMod .. " + SHIFT + Period", hl.dsp.window.resize({ x = 10, y = 0 }), { repeating = true })
-hl.bind(mainMod .. " + Period", hl.dsp.window.resize({ x = 0, y = -10 }), { repeating = true })
-hl.bind(mainMod .. " + Comma", hl.dsp.window.resize({ x = 0, y = 10 }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + H", function()
+  local w = hl.get_active_window()
+  if (w.floating == true) then -- move floating window left
+    hl.dispatch(hl.dsp.window.move({ x = -10, y = 0, relative = true }))
+  else -- swap tiled window with window to the left
+    hl.dispatch(hl.dsp.window.swap({ direction = "left" }))
+  end
+end, { repeating = true })
+hl.bind(mainMod .. " + SHIFT + L", function()
+  local w = hl.get_active_window()
+  if (w.floating == true) then -- move floating window right
+    hl.dispatch(hl.dsp.window.move({ x = 10, y = 0, relative = true }))
+  else -- swap tiled window with window to the right
+    hl.dispatch(hl.dsp.window.swap({ direction = "right" }))
+  end
+end, { repeating = true })
+hl.bind(mainMod .. " + SHIFT + K", function()
+  local w = hl.get_active_window()
+  if (w.floating == true) then -- move floating window up
+    hl.dispatch(hl.dsp.window.move({ x = 0, y = -10, relative = true }))
+  else -- swap tiled window with window above
+    hl.dispatch(hl.dsp.window.swap({ direction = "up" }))
+  end
+end, { repeating = true })
+hl.bind(mainMod .. " + SHIFT + J", function()
+  local w = hl.get_active_window()
+  if (w.floating == true) then -- move floating window down
+    hl.dispatch(hl.dsp.window.move({ x = 0, y = 10, relative = true }))
+  else -- swap tiled window with window below
+    hl.dispatch(hl.dsp.window.swap({ direction = "down" }))
+  end
+end, { repeating = true })
+
+hl.bind(mainMod .. " + SHIFT + Comma", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + Period", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + Comma", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + Period", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
 
 for i = 1, 10 do
     hl.bind(mainMod .. " + " .. (i % 10), function()
