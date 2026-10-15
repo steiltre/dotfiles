@@ -8,7 +8,7 @@
 local terminal = "alacritty"
 local fileManager = "dolphin"
 local menu = "rofi -show drun"
-local mainMod = "SUPER"
+mainMod = "SUPER"
 
 hl.env("XCURSOR_SIZE", "20")
 hl.env("HYPRCURSOR_SIZE", "20")
