@@ -26,9 +26,12 @@ for _, m in ipairs(hl.get_monitors()) do
 end
 
 hl.on("monitor.added", function(m)
-  hl.dispatch(hl.dsp.reload_config())
+  -- hl..dsp.reload_config() will be added in a future hyprland release
+  -- hl.dsp.reload_config()
+  hl.dsp.exec_cmd("hyprctl reload")
 end)
 
 hl.on("monitor.removed", function(m)
-  hl.dispatch(hl.dsp.reload_config())
+  -- hl.dispatch(hl.dsp.reload_config())
+  hl.dsp.exec_cmd("hyprctl reload")
 end)

@@ -176,6 +176,8 @@ hl.bind(mainMod .. " + SHIFT + Period", hl.dsp.window.resize({ x = 10, y = 0, re
 hl.bind(mainMod .. " + Comma", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + Period", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
 
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("hyprctl reload"))
+
 for i = 1, 10 do
     hl.bind(mainMod .. " + " .. (i % 10), function()
       local monitor_adjusted_workspace = hl.get_active_workspace().monitor.id * 10 + (i % 10)
