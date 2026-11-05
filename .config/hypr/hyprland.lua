@@ -260,7 +260,7 @@ hl.define_submap("groups", function()
     hl.bind("SHIFT + K", hl.dsp.window.move({ into_or_create_group = "up" }))
     hl.bind("SHIFT + J", hl.dsp.window.move({ into_or_create_group = "down" }))
     hl.bind(" + T", hl.dsp.group.toggle())
-    hl.bind(" + R", hl.dsp.group.lock_active({ toggle }))
+    hl.bind(" + R", hl.dsp.group.lock({ toggle }))
     hl.bind(" + E", hl.dsp.window.move( { out_of_group = true }))
 
     for i = 1, 10 do
